@@ -21,6 +21,21 @@ function borrar(){
 	resultado.value = newArray;
 }
 
+function asin(){
+	mostrar('Math.asin('); ftIn();
+} 
+
+function acos(){
+	mostrar('Math.acos('); ftIn();
+} 
+function atan(){
+	mostrar('Math.atan('); ftIn();
+}
+
+function ftIn(){
+	convert = 1;
+}
+
 function degrees(){
 	convert = 0;
 	let mode = document.querySelector('#modeRad');
@@ -37,6 +52,25 @@ function degrees(){
 	radianes.forEach(function(btn){
 		convert = 1;
 	});
+
+	function ftIn(){
+		convert = 1;
+	}
+}
+
+function raiz(){
+	mostrar('Math.sqrt(');
+	convert = 0;
+}
+
+function cbrt(){
+	mostrar('Math.cbrt(');
+	convert = 0;
+}
+
+function pI(){
+	mostrar('Math.PI');
+	convert = 0;
 }
 
 function radians(){
@@ -50,26 +84,7 @@ function radians(){
 	let btnRad = document.querySelector('.cambio');
 	btnRad.setAttribute("onclick", "degrees()");
 	btnRad.textContent = "Grad";
-}
 
-function ftIn(){
-	convert = 2;
-}
-
-function asin(){
-	mostrar('Math.asin('); ftIn();
-} 
-
-function acos(){
-	mostrar('Math.acos('); ftIn();
-} 
-function atan(){
-	mostrar('Math.atan('); ftIn();
-}
-
-function pI(){
-	mostrar('Math.PI');
-	convert = 0;
 }
 
 function calcular(){
@@ -82,6 +97,7 @@ function calcular(){
 			resultado.value = calculated;
 		}
 		else if(convert == 1){
+			//se convierten a grados
 			string = resultado.value;
 			numero = string.replace(/[^0-9]+/g, "");
 			// alert(numero)
