@@ -33,7 +33,7 @@ function atan(){
 }
 
 function ftIn(){
-	convert = 1;
+	convert = 2;
 }
 
 function degrees(){
@@ -53,9 +53,9 @@ function degrees(){
 		convert = 1;
 	});
 
-	function ftIn(){
-		convert = 1;
-	}
+	// function ftIn(){
+	// 	convert = 1;
+	// }
 }
 
 function inverso(){
