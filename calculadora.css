@@ -1,0 +1,102 @@
+body{
+	font-family: Arial;
+	text-align:center;
+	background-image:url('ash_and_pikachu.jpg');
+	background-repeat:no-repeat;
+	background-size:100% 100%;
+	background-color:#4444f2;
+	font-size:12px;
+	height:100vh;
+}
+
+.case{
+	min-width:300px;
+	height:630px;
+	border:black solid 3px;
+	border-radius:20px;
+	z-index: 1;
+	background-image: linear-gradient(to bottom right, #cc0000 40%, #a3101d, #ab2631);
+	position:fixed;
+	left:50px;
+	top:10px;
+	box-shadow:1px 1px black;
+}
+
+.resultado{
+	background-color:#c1c1c1;
+	border:black solid 1px;
+	margin:30px;
+	height:60px;
+	border-radius:10px;
+	text-align:right; 
+	font-weight:700;
+	text-shadow:2px 2px #a3aea4;
+	box-shadow:3px 3px #aa0000;
+}
+
+input{
+	width:300px;
+}
+
+.row, .row-result{
+	display:flex;
+	align-items: center;
+	justify-content:space-evenly;
+	border-top:#181926 solid 0.5px;
+}
+
+.row-result{
+	margin-bottom:20px;
+	border-bottom:#181926 solid 0.5px;
+}
+
+.erase{
+	width:auto;
+	padding:6px;
+	border:black solid 2px;
+	border-radius:10px;
+	font-size:12px;
+}
+
+h1{
+	width:48px;
+	padding:12px;
+	height:20px;
+	border:black solid 2px;
+	border-radius:10px;
+	box-shadow:2px 2px #801111;
+}
+
+h2{
+	box-shadow:2px 2px #aa0000;
+	width:48px;
+	padding:12px;
+}
+
+h2:hover, h1:hover{
+	background-color:#aa0000;
+	box-shadow:2px 2px #400404 ;
+	color:#fff;
+	cursor:pointer;
+}
+
+b{
+	z-index:1;
+	position:absolute;
+	left:40px;
+	top:40px;
+	/*margin-right:0px;*/
+}
+
+#cientifica{
+	display:none;
+}
+
+#modeRad{
+	display:block;
+}
+
+
+#modeGrad{
+	display:none;
+}

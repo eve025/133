@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<title>Calculadora pokemon</title>
+	<link rel="stylesheet" href="calculadora.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+</head>
+<body>
+	<div class="case">
+		<b id="modeRad">Rad</b>
+		<b id="modeGrad">Grad</b>
+			<input type="text" class="resultado" readonly>
+		<div class="row-result">
+			<h2 class="erase switch" onclick="scientific()">
+				<svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512"><path d="M0 224c0 17.7 14.3 32 32 32s32-14.3 32-32c0-53 43-96 96-96H320v32c0 12.9 7.8 24.6 19.8 29.6s25.7 2.2 34.9-6.9l64-64c12.5-12.5 12.5-32.8 0-45.3l-64-64c-9.2-9.2-22.9-11.9-34.9-6.9S320 19.1 320 32V64H160C71.6 64 0 135.6 0 224zm512 64c0-17.7-14.3-32-32-32s-32 14.3-32 32c0 53-43 96-96 96H192V352c0-12.9-7.8-24.6-19.8-29.6s-25.7-2.2-34.9 6.9l-64 64c-12.5 12.5-12.5 32.8 0 45.3l64 64c9.2 9.2 22.9 11.9 34.9 6.9s19.8-16.6 19.8-29.6V448H352c88.4 0 160-71.6 160-160z"/></svg>
+			</h2>
+			<!-- <h2 class="erase" onclick="integrate()">Integrar</h2> -->
+			<h2 class="erase" onclick="borrarTodo()">AC</h2>
+			<h2 class="erase" onclick="borrar()">⌫</h2>
+		</div>
+
+		<section id="normal">
+		<div class="row">
+			<h1 class="number" onclick="mostrar('(')">(</h1>
+			<h1 class="number" onclick="mostrar(')')">)</h1>
+			<h1 class="number" onclick="mostrar('-')">(-)</h1>
+			<h1 class="number" onclick="mostrar('*.01')">%</h1>
+		</div>
+		<div class="row">
+			<h1 class="number" onclick="mostrar('7')">7</h1>
+			<h1 class="number" onclick="mostrar('8')">8</h1>
+			<h1 class="number" onclick="mostrar('9')">9</h1>
+			<h1 class="number" onclick="mostrar('/')">÷</h1>
+		</div>
+		
+		<div class="row">
+			<h1 class="number" onclick="mostrar('4')">4</h1>
+			<h1 class="number" onclick="mostrar('5')">5</h1>
+			<h1 class="number" onclick="mostrar('6')">6</h1>
+			<h1 class="number" onclick="mostrar('*')">x</h1>
+		</div>
+		
+		<div class="row">
+			<h1 class="number" onclick="mostrar('1')">1</h1>
+			<h1 class="number" onclick="mostrar('2')">2</h1>
+			<h1 class="number" onclick="mostrar('3')">3</h1>
+			<h1 class="number" onclick="mostrar('-')">-</h1>
+		</div>
+		
+		<div class="row">
+			<h1 class="number" onclick="mostrar('0')">0</h1>
+			<h1 class="number" onclick="mostrar('.')">.</h1>
+			<h1 class="number" onclick="calcular()">=</h1>
+			<h1 class="number" onclick="mostrar('+')">+</h1>
+		</div>
+	</section>
+
+	<section id="cientifica">
+		<div class="row">
+			<h1 class="number" onclick="raiz('Math.sqrt(')">²√</h1>
+			<h1 class="number" onclick="mostrar('Math.cbrt(')">³√</h1>
+			<h1 class="number" onclick="mostrar('**2')">x²</h1>
+			<h1 class="number" onclick="mostrar('**3')">x³</h1>
+		</div>
+		
+		<div class="row">
+			<h1 class="rad" onclick="mostrar('Math.sin(')">sin</h1>
+			<h1 class="rad" onclick="mostrar('Math.cos(')">cos</h1>
+			<h1 class="rad" onclick="mostrar('Math.tan(')">tan</h1>
+			<h1 class="rad" onclick="mostrar('**')">^</h1>
+		</div>
+		
+		<div class="row">
+			<h1 class="inverse" onclick="mostrar('Math.asin(')">sin⁻¹</h1>
+			<h1 class="inverse" onclick="mostrar('Math.acos(')">cos⁻¹</h1>
+			<h1 class="inverse" onclick="mostrar('Math.atan(')">tan⁻¹</h1>
+			<h1 class="pi" onclick="mostrar('Math.PI')">𝝅</h1>
+		</div>
+
+		<div class="row">
+			<h1 class="number" onclick="mostrar('Math.sinh(')">sinh</h1>
+			<h1 class="number" onclick="mostrar('Math.cosh(')">cosh</h1>
+			<h1 class="number" onclick="mostrar('Math.tanh(')">tanh</h1>
+			<h1 class="number" onclick="mostrar('Math.log(')">log</h1>
+		</div>
+
+		<div class="row">
+			<h1 class="number" onclick="mostrar('Math.asinh(')">sinh⁻¹</h1>
+			<h1 class="number" onclick="mostrar('Math.acosh(')">cosh⁻¹</h1>
+			<h1 class="number" onclick="mostrar('Math.atanh(')">tanh⁻¹</h1>
+			<h1 class="cambio" onclick="degrees()">Deg</h1>
+		</div>
+	</section>
+	</div>
+	<script src="CALCULADORA fx-350MS.js"></script>
+</body>
+</html>
