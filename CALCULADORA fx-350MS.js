@@ -58,6 +58,12 @@ function degrees(){
 	}
 }
 
+function inverso(){
+	let resultado = document.querySelector('.resultado');
+	let calculated = (1 / resultado.value);
+	resultado.value = calculated;
+} 
+
 function raiz(){
 	mostrar('Math.sqrt(');
 	convert = 0;
