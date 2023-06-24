@@ -52,8 +52,27 @@ function radians(){
 	btnRad.textContent = "Grad";
 }
 
+function ftIn(){
+	convert = 2;
+}
+
+function asin(){
+	mostrar('Math.asin('); ftIn();
+} 
+
+function acos(){
+	mostrar('Math.acos('); ftIn();
+} 
+function atan(){
+	mostrar('Math.atan('); ftIn();
+}
+
+function pI(){
+	mostrar('Math.PI');
+	convert = 0;
+}
+
 function calcular(){
-	// alert(convert)
 	let resultado = document.querySelector('.resultado');
 	let calculated, string, numero, operacion, tecla = "";
 
@@ -87,20 +106,21 @@ function calcular(){
 			calculated = eval(newString);
 			resultado.value = calculated;
 		}
-		// else{
-		// 	calculated = eval(resultado.value);
-		// 	numero = calculated * (180/Math.PI);
-		// 	resultado.value = numero;
-		// }
+		else if(convert == 2){
+			calculated = eval(resultado.value);
+			numero = calculated * (180/Math.PI);
+			resultado.value = numero;
+		}
 	}
 	catch(error){
 		resultado.value = "Syntax error!";
 		alert(error);
 	}
+
+	// alert(convert)
 }
 
 function scientific(){
-	// alert(convert);
 	let cambio = document.querySelector(".switch");
 	cambio.setAttribute("onclick", "backToNormal()");
 	let normal = document.querySelector("#normal");
@@ -112,7 +132,6 @@ function scientific(){
 }
 
 function backToNormal(){
-	// alert(convert);
 	let cambio = document.querySelector(".switch");
 	cambio.setAttribute("onclick", "scientific()");
 	let cientifica = document.querySelector("#cientifica");
