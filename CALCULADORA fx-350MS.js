@@ -21,6 +21,7 @@ function borrar(){
 	resultado.value = newArray;
 }
 
+//LA FUNCION CAMBIA SI EL RESULTADO SERA EN GRADOS
 function asin(){
 	mostrar('Math.asin('); ftIn();
 } 
@@ -53,9 +54,13 @@ function degrees(){
 		convert = 1;
 	});
 
-	// function ftIn(){
-	// 	convert = 1;
-	// }
+	//LA FUNCION CAMBIA SI EL RESULTADO SERA EN GRADOS
+	let asinR = document.querySelector('.asin');
+	asinR.setAttribute("onclick", "asin()");
+	let acosR = document.querySelector('.acos');
+	acosR.setAttribute("onclick", "acos()");
+	let atanR = document.querySelector('.atan');
+	atanR.setAttribute("onclick", "atan()");
 }
 
 function inverso(){
@@ -91,6 +96,29 @@ function radians(){
 	btnRad.setAttribute("onclick", "degrees()");
 	btnRad.textContent = "Grad";
 
+	//LA FUNCION CAMBIA SI EL RESULTADO SERA EN RADIANES
+	let asinG = document.querySelector('.asin');
+	asinG.setAttribute("onclick", "asinR()");
+	let acosG = document.querySelector('.acos');
+	acosG.setAttribute("onclick", "acosR()");
+	let atanG = document.querySelector('.atan');
+	atanG.setAttribute("onclick", "atanR()");
+}
+
+//LA FUNCION CAMBIA SI EL RESULTADO SERA EN RADIANES
+function asinR(){
+	mostrar('Math.asin('); ftInR();
+} 
+
+function acosR(){
+	mostrar('Math.acos('); ftInR();
+} 
+function atanR(){
+	mostrar('Math.atan('); ftInR();
+}
+
+function ftInR(){
+	convert = 0;
 }
 
 function calcular(){
@@ -139,7 +167,7 @@ function calcular(){
 		alert(error);
 	}
 
-	// alert(convert)
+	alert(convert)
 }
 
 function scientific(){
@@ -162,3 +190,4 @@ function backToNormal(){
 	let normal = document.querySelector("#normal");
 	normal.style.display = "block";
 }
+// Developed by @im.haydee 2023
