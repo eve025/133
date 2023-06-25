@@ -167,7 +167,7 @@ function calcular(){
 		alert(error);
 	}
 
-	alert(convert)
+	// alert(convert)
 }
 
 function scientific(){
