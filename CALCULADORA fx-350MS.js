@@ -62,10 +62,10 @@ function degrees(){
 	let atanR = document.querySelector('.atan');
 	atanR.setAttribute("onclick", "atan()");
 
-	let number = document.querySelectorAll('.number');
-	number.forEach(function(btnNormal){
-		convert = 0;
-	});
+	// let number = document.querySelectorAll('.number');
+	// number.forEach(function(btnNormal){
+	// 	convert = 0;
+	// });
 }
 
 function inverso(){
