@@ -61,6 +61,11 @@ function degrees(){
 	acosR.setAttribute("onclick", "acos()");
 	let atanR = document.querySelector('.atan');
 	atanR.setAttribute("onclick", "atan()");
+
+	let number = document.querySelectorAll('.number');
+	number.forEach(function(btnNormal){
+		convert = 0;
+	});
 }
 
 function inverso(){
@@ -119,6 +124,19 @@ function atanR(){
 
 function ftInR(){
 	convert = 0;
+}
+
+function factorial(){
+	let resultado = document.querySelector('.resultado');
+	resultado.value += "!";
+	let string = resultado.value;
+	let numero = string.replace(/[^0-9]+/g, "");
+	convert = 0;
+	let factorial = 1;
+	for(let i =1; i<= numero;i++){
+		factorial *= i; 
+	}
+	resultado.value = factorial;
 }
 
 function calcular(){
