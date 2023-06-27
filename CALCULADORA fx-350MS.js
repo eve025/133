@@ -1,4 +1,5 @@
 var convert = 0;
+var calcFct = 0; 
 
 function mostrar(tecla){
 	let resultado = document.querySelector('.resultado');
@@ -49,10 +50,12 @@ function degrees(){
 	btnGrad.setAttribute("onclick", "radians()");
 	btnGrad.textContent = "Rad";
 
-	let radianes = document.querySelectorAll('.rad');
-	radianes.forEach(function(btn){
-		convert = 1;
-	});
+	let sinR = document.querySelector('.sin');
+	sinR.setAttribute("onclick", "sin()");
+	let cosR = document.querySelector('.cos');
+	cosR.setAttribute("onclick", "cos()");
+	let tanR = document.querySelector('.tan');
+	tanR.setAttribute("onclick", "tan()");
 
 	//LA FUNCION CAMBIA SI EL RESULTADO SERA EN GRADOS
 	let asinR = document.querySelector('.asin');
@@ -61,11 +64,18 @@ function degrees(){
 	acosR.setAttribute("onclick", "acos()");
 	let atanR = document.querySelector('.atan');
 	atanR.setAttribute("onclick", "atan()");
+}
 
-	// let number = document.querySelectorAll('.number');
-	// number.forEach(function(btnNormal){
-	// 	convert = 0;
-	// });
+function sin(){
+	mostrar('Math.sin('); convert = 1;
+}
+
+function cos(){
+	mostrar('Math.cos('); convert = 1;
+}
+
+function tan(){
+	mostrar('Math.tan('); convert = 1;
 }
 
 function inverso(){
@@ -126,17 +136,11 @@ function ftInR(){
 	convert = 0;
 }
 
+
 function factorial(){
+	calcFct = 1; 
 	let resultado = document.querySelector('.resultado');
 	resultado.value += "!";
-	let string = resultado.value;
-	let numero = string.replace(/[^0-9]+/g, "");
-	convert = 0;
-	let factorial = 1;
-	for(let i =1; i<= numero;i++){
-		factorial *= i; 
-	}
-	resultado.value = factorial;
 }
 
 function calcular(){
@@ -145,8 +149,20 @@ function calcular(){
 
 	try{
 		if(convert == 0){
-			calculated = eval(resultado.value);
-			resultado.value = calculated;
+			if(calcFct == 1){
+				let string = resultado.value;
+				let numero = string.replace(/[^0-9]+/g, "");
+				convert = 0;
+				let factorial = 1;
+				for(let i =1; i<= numero;i++){
+					factorial *= i; 
+				}
+				resultado.value = factorial;
+			}
+			else{
+				calculated = eval(resultado.value);
+				resultado.value = calculated;
+			}
 		}
 		else if(convert == 1){
 			//se convierten a grados
@@ -155,10 +171,7 @@ function calcular(){
 			// alert(numero)
 			let grados = numero * (Math.PI/180);
 			// alert(typeof(numero)) //es un string
-
-			// resultado.value = grados;
-			// alert(typeof(grados.toString()))
-
+			
 			operacion = string.replace(/[0-9]+/g, "");
 			for(let letra=0;letra < operacion.length-1; letra++){
 				tecla += operacion[letra];
@@ -168,9 +181,11 @@ function calcular(){
 			// alert(tecla)
 			// alert(typeof(operacion))
 
+
 			let newString = tecla + grados + ")";
 			// // let newString = grados;
 			// alert(newString)
+			
 			calculated = eval(newString);
 			resultado.value = calculated;
 		}
