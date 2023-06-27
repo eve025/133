@@ -9,6 +9,8 @@ function mostrar(tecla){
 function borrarTodo(){
 	let resultado = document.querySelector('.resultado');
 	resultado.value = " ";
+	calcFct = 0;
+	convert = 0;
 }
 
 function borrar(){
@@ -111,6 +113,13 @@ function radians(){
 	btnRad.setAttribute("onclick", "degrees()");
 	btnRad.textContent = "Grad";
 
+	let sinG = document.querySelector('.sin');
+	sinG.setAttribute("onclick", "sinR()");
+	let cosG = document.querySelector('.cos');
+	cosG.setAttribute("onclick", "cosR()");
+	let tanG = document.querySelector('.tan');
+	tanG.setAttribute("onclick", "tanR()");
+
 	//LA FUNCION CAMBIA SI EL RESULTADO SERA EN RADIANES
 	let asinG = document.querySelector('.asin');
 	asinG.setAttribute("onclick", "asinR()");
@@ -118,6 +127,19 @@ function radians(){
 	acosG.setAttribute("onclick", "acosR()");
 	let atanG = document.querySelector('.atan');
 	atanG.setAttribute("onclick", "atanR()");
+}
+
+
+function sinR(){
+	mostrar('Math.sin('); convert = 0;
+}
+
+function cosR(){
+	mostrar('Math.cos('); convert = 0;
+}
+
+function tanR(){
+	mostrar('Math.tan('); convert = 0;
 }
 
 //LA FUNCION CAMBIA SI EL RESULTADO SERA EN RADIANES
@@ -135,7 +157,6 @@ function atanR(){
 function ftInR(){
 	convert = 0;
 }
-
 
 function factorial(){
 	calcFct = 1; 
@@ -171,7 +192,10 @@ function calcular(){
 			// alert(numero)
 			let grados = numero * (Math.PI/180);
 			// alert(typeof(numero)) //es un string
-			
+
+			// resultado.value = grados;
+			// alert(typeof(grados.toString()))
+
 			operacion = string.replace(/[0-9]+/g, "");
 			for(let letra=0;letra < operacion.length-1; letra++){
 				tecla += operacion[letra];
@@ -199,7 +223,7 @@ function calcular(){
 		resultado.value = "Syntax error!";
 		alert(error);
 	}
-
+	calcFct = 0;
 	// alert(convert)
 }
 
